@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tro-Web Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,600&display=swap" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <style>
+    * {
+    font-family: 'Source Sans Pro';
+    }
+    </style>
+</head>
+<body>
+    <header class=" flex fixed top-0 left-0 right-0  z-50 max-w-full p-6 bg-green-900 flex-col overflow-hidden py-2 text-slate-700 md:mx-auto md:flex-row md:items-center">
+      <a href="#" class="flex cursor-pointer items-center whitespace-nowrap text-2xl font-black">
+          <img src="./assets/images/logo-tro.png" alt="">
+      </a>
+      
+      
+      <input type="checkbox" class="peer hidden" id="navbar-open" />
+      <label class="absolute flex justify-around top-5 right-7 cursor-pointer text-white md:hidden" for="navbar-open">
+        <a href="#" class="relative text-white hover:text-gray-300 mr-12 ">
+          <svg version="1.0" id="Layer_1"  class="w-8 h-8 border p-2 " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve" fill="#fffff" stroke="#000000">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier"> 
+              <g> 
+                <path fill="#ffff" d="M60.476,16H15.059L12,3c-0.438-1.75-1.614-3-3.271-3H3C1.343,0,0,1.343,0,3s1.343,3,3,3h3.723 l11.069,46.458C15.619,53.359,14.09,55.501,14.09,58c0,3.313,2.687,6,6,6c2.972,0,5.433-2.162,5.91-5h14.09 c0.478,2.838,2.938,5,5.91,5c3.313,0,6-2.687,6-6s-2.687-6-6-6c-2.972,0-5.433,2.164-5.91,5H26c-0.478-2.836-2.938-5-5.91-5 c-0.125,0-0.246,0.012-0.369,0.019l-0.642-2.258C19.507,49.904,19.972,50,20.505,50h32.969c2.625,0,3.908-1.904,4.5-4l5.933-26 C64.344,17.583,63.265,16,60.476,16z M46,54c2.209,0,4,1.791,4,4s-1.791,4-4,4s-4-1.791-4-4S43.791,54,46,54z M24.09,58 c0,2.209-1.791,4-4,4s-4-1.791-4-4s1.791-4,4-4S24.09,55.791,24.09,58z M8.38,4.611C8.38,4.611,8.226,4,7.529,4S3,4,3,4 C2.447,4,2,3.553,2,3s0.447-1,1-1h5.833C9.386,2,9.837,2.455,10,3l3.059,13h0.459c-0.991,0-1.756,0.209-2.323,0.576L8.38,4.611z M61.974,20l-6,26c-0.271,1.167-1.021,2-2.125,2H20.131c-1.102,0-1.85-0.833-2.12-2l-5.988-26c-0.312-1.229,0.125-2,1.479-2h46.989 C61.849,18,62.286,18.771,61.974,20z"></path> 
+                <circle fill="#ffff" cx="46" cy="58" r="1"></circle> 
+                <circle fill="#ffff" cx="20.09" cy="58" r="1"></circle> 
+                <path fill="#ffff" d="M37,22c-1.657,0-3,1.343-3,3v16c0,1.657,1.343,3,3,3s3-1.343,3-3V25C40,23.343,38.657,22,37,22z M38,41 c0,0.553-0.447,1-1,1s-1-0.447-1-1V25c0-0.553,0.447-1,1-1s1,0.447,1,1V41z"></path>
+                 <path fill="#ffff" d="M47,22c-1.657,0-3,1.343-3,3v16c0,1.657,1.343,3,3,3s3-1.343,3-3V25C50,23.343,48.657,22,47,22z M48,41 c0,0.553-0.447,1-1,1s-1-0.447-1-1V25c0-0.553,0.447-1,1-1s1,0.447,1,1V41z"></path> 
+                <path fill="#ffff" d="M27,22c-1.657,0-3,1.343-3,3v16c0,1.657,1.343,3,3,3s3-1.343,3-3V25C30,23.343,28.657,22,27,22z M28,41 c0,0.553-0.447,1-1,1s-1-0.447-1-1V25c0-0.553,0.447-1,1-1s1,0.447,1,1V41z"></path> 
+              </g>
+            </g>
+          </svg>
+          <div id="" class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-orange-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900">
+            <span id="valuePanier"></span>
+          </div>
+        </a>
+        <a href="#" class="text-white hover:text-gray-300 mr-2">
+          <svg fill="#ffff" class="w-8 h-8 border p-2 " version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.001 512.001" xml:space="preserve">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier"> 
+              <g>
+                <g> 
+                  <g> 
+                    <path d="M316.985,93.33C243.918,40.242,141.28,56.499,88.191,129.568c-25.717,35.395-36.11,78.688-29.266,121.902 s30.107,81.174,65.504,106.89c28.291,20.555,61.623,31.321,95.929,31.321c8.617,0,17.297-0.68,25.972-2.054 c43.213-6.844,81.175-30.106,106.892-65.504C406.309,249.054,390.054,146.418,316.985,93.33z M337.279,310.54 c-22.623,31.137-56.016,51.601-94.032,57.622c-38.012,6.023-76.098-3.123-107.235-25.744 c-31.137-22.623-51.601-56.017-57.622-94.032s3.122-76.098,25.745-107.235c28.163-38.761,72.162-59.345,116.763-59.345 c29.36,0,58.988,8.928,84.504,27.467C369.68,155.974,383.98,246.262,337.279,310.54z"></path> 
+                    <path d="M220.707,115.895c-61.801,0-112.079,50.278-112.079,112.079s50.278,112.079,112.079,112.079 s112.079-50.278,112.079-112.079S282.508,115.895,220.707,115.895z M128.866,237.827h31.108 c1.144,25.119,6.64,48.561,15.779,66.839c0.964,1.927,1.963,3.776,2.99,5.557C151.629,296.333,132.235,269.447,128.866,237.827z M175.752,151.283c-9.139,18.278-14.634,41.719-15.779,66.839h-31.108c3.369-31.621,22.763-58.505,49.877-72.396 C177.716,147.506,176.716,149.355,175.752,151.283z M210.854,237.827v79.421c-15.113-9.315-29.17-39.055-31.164-79.421 L210.854,237.827L210.854,237.827z M210.854,218.12H179.69c1.994-40.365,16.051-70.105,31.164-79.421V218.12z M230.56,317.248 v-79.421h31.164C259.73,278.193,245.674,307.934,230.56,317.248z M230.56,218.121V138.7c15.113,9.315,29.17,39.055,31.164,79.421 H230.56z M262.672,310.222c1.027-1.781,2.027-3.63,2.99-5.557c9.139-18.278,14.634-41.719,15.779-66.839h31.107 C309.18,269.447,289.785,296.333,262.672,310.222z M281.441,218.121c-1.144-25.119-6.64-48.561-15.779-66.839 c-0.964-1.927-1.963-3.776-2.99-5.557c27.113,13.89,46.508,40.775,49.876,72.396H281.441z"></path>
+                    <path d="M507.937,489.163L369.741,388.759c10.882-9.96,20.809-21.056,29.586-33.137c8.78-12.085,16.266-24.958,22.374-38.379 l74.653,54.24c1.749,1.271,3.775,1.883,5.784,1.883c3.047,0,6.051-1.41,7.98-4.063c3.199-4.402,2.223-10.564-2.18-13.762 l-78.675-57.16c31.898-91.469,0.158-193.803-78.781-251.154C302.775,12.563,244.421-1.447,186.17,7.781 c-58.25,9.225-109.42,40.581-144.082,88.29c-71.558,98.492-49.646,236.837,48.846,308.396 c38.777,28.171,84.344,42.16,129.831,42.158c47.115-0.004,94.134-15.03,133.374-44.846l142.217,103.327 c1.749,1.271,3.775,1.883,5.784,1.883c3.047,0,6.051-1.41,7.98-4.063C513.316,498.524,512.34,492.362,507.937,489.163z M347.683,381.799c-36.795,30.009-81.804,45.125-126.923,45.122c-41.42-0.001-82.934-12.744-118.246-38.398 C12.815,323.351-7.141,197.353,58.03,107.653c39.3-54.092,100.701-82.815,162.942-82.815c40.973,0,82.319,12.459,117.928,38.33 c73.774,53.602,102.3,150.338,69.36,235.263c-6.206,16.086-14.575,31.431-24.875,45.608 C373.087,358.212,361.08,370.912,347.683,381.799z"></path>
+                  </g> 
+                </g> 
+              </g> 
+            </g>
+          </svg>
+        </a>
+        <a href="./page/login.html" class="text-white hover:text-gray-300 mr-2">
+          <svg viewBox="0 0 24 24" class="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier"> 
+              <path opacity="0.5" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" fill="#32da2f"></path> 
+              <path d="M16.807 19.0112C15.4398 19.9504 13.7841 20.5 12 20.5C10.2159 20.5 8.56023 19.9503 7.193 19.0111C6.58915 18.5963 6.33109 17.8062 6.68219 17.1632C7.41001 15.8302 8.90973 15 12 15C15.0903 15 16.59 15.8303 17.3178 17.1632C17.6689 17.8062 17.4108 18.5964 16.807 19.0112Z" fill="#32da2f"></path> 
+              <path d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3432 6 9.00004 7.34315 9.00004 9C9.00004 10.6569 10.3432 12 12 12Z" fill="#32da2f"></path> 
+            </g>
+          </svg>
+        </a>
+          <span class="sr-only">Toggle Navigation</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+      </label>
+
+      <nav aria-label="Header Navigation" class="flex max-h-0 w-full flex-col items-center justify-between overflow-hidden transition-all peer-checked:mt-8 peer-checked:max-h-56 md:ml-24 md:max-h-full md:flex-row md:items-start">
+        <ul class="flex flex-col items-center space-y-2 md:ml-auto md:flex-row md:space-y-0">
+            <li class="font-bold md:mr-12 text-green-400"><a href="#">Accueil</a></li>
+            <li class="md:mr-12 text-white"><a href="/page/product.html">Produits</a></li>
+            <li class="md:mr-12 text-white"><a href="#contact">Contacts</a></li>
+            <li class="md:mr-12 text-white hidden sm:flex">
+              <a href="#" class="relative text-white hover:text-gray-300">
+                  <svg version="1.0" id="Layer_1"  class="w-8 h-8 border p-2 " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve" fill="#fffff" stroke="#000000">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier"> 
+                      <g> 
+                        <path fill="#ffff" d="M60.476,16H15.059L12,3c-0.438-1.75-1.614-3-3.271-3H3C1.343,0,0,1.343,0,3s1.343,3,3,3h3.723 l11.069,46.458C15.619,53.359,14.09,55.501,14.09,58c0,3.313,2.687,6,6,6c2.972,0,5.433-2.162,5.91-5h14.09 c0.478,2.838,2.938,5,5.91,5c3.313,0,6-2.687,6-6s-2.687-6-6-6c-2.972,0-5.433,2.164-5.91,5H26c-0.478-2.836-2.938-5-5.91-5 c-0.125,0-0.246,0.012-0.369,0.019l-0.642-2.258C19.507,49.904,19.972,50,20.505,50h32.969c2.625,0,3.908-1.904,4.5-4l5.933-26 C64.344,17.583,63.265,16,60.476,16z M46,54c2.209,0,4,1.791,4,4s-1.791,4-4,4s-4-1.791-4-4S43.791,54,46,54z M24.09,58 c0,2.209-1.791,4-4,4s-4-1.791-4-4s1.791-4,4-4S24.09,55.791,24.09,58z M8.38,4.611C8.38,4.611,8.226,4,7.529,4S3,4,3,4 C2.447,4,2,3.553,2,3s0.447-1,1-1h5.833C9.386,2,9.837,2.455,10,3l3.059,13h0.459c-0.991,0-1.756,0.209-2.323,0.576L8.38,4.611z M61.974,20l-6,26c-0.271,1.167-1.021,2-2.125,2H20.131c-1.102,0-1.85-0.833-2.12-2l-5.988-26c-0.312-1.229,0.125-2,1.479-2h46.989 C61.849,18,62.286,18.771,61.974,20z"></path> 
+                        <circle fill="#ffff" cx="46" cy="58" r="1"></circle> 
+                        <circle fill="#ffff" cx="20.09" cy="58" r="1"></circle> 
+                        <path fill="#ffff" d="M37,22c-1.657,0-3,1.343-3,3v16c0,1.657,1.343,3,3,3s3-1.343,3-3V25C40,23.343,38.657,22,37,22z M38,41 c0,0.553-0.447,1-1,1s-1-0.447-1-1V25c0-0.553,0.447-1,1-1s1,0.447,1,1V41z"></path>
+                         <path fill="#ffff" d="M47,22c-1.657,0-3,1.343-3,3v16c0,1.657,1.343,3,3,3s3-1.343,3-3V25C50,23.343,48.657,22,47,22z M48,41 c0,0.553-0.447,1-1,1s-1-0.447-1-1V25c0-0.553,0.447-1,1-1s1,0.447,1,1V41z"></path> 
+                        <path fill="#ffff" d="M27,22c-1.657,0-3,1.343-3,3v16c0,1.657,1.343,3,3,3s3-1.343,3-3V25C30,23.343,28.657,22,27,22z M28,41 c0,0.553-0.447,1-1,1s-1-0.447-1-1V25c0-0.553,0.447-1,1-1s1,0.447,1,1V41z"></path> 
+                      </g>
+                    </g>
+                  </svg>
+                  <div id="" class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-orange-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900">
+                    <span id="valuePanier"></span>
+                  </div>
+              </a>
+            </li>
+          <!-- Icône de Recherche -->
+          <li class="md:mr-12 text-white hidden sm:flex">
+            <a href="#" class="text-white hover:text-gray-300">
+              <svg fill="#ffff" class="w-8 h-8 border p-2 " version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.001 512.001" xml:space="preserve">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier"> 
+                  <g>
+                    <g> 
+                      <g> 
+                        <path d="M316.985,93.33C243.918,40.242,141.28,56.499,88.191,129.568c-25.717,35.395-36.11,78.688-29.266,121.902 s30.107,81.174,65.504,106.89c28.291,20.555,61.623,31.321,95.929,31.321c8.617,0,17.297-0.68,25.972-2.054 c43.213-6.844,81.175-30.106,106.892-65.504C406.309,249.054,390.054,146.418,316.985,93.33z M337.279,310.54 c-22.623,31.137-56.016,51.601-94.032,57.622c-38.012,6.023-76.098-3.123-107.235-25.744 c-31.137-22.623-51.601-56.017-57.622-94.032s3.122-76.098,25.745-107.235c28.163-38.761,72.162-59.345,116.763-59.345 c29.36,0,58.988,8.928,84.504,27.467C369.68,155.974,383.98,246.262,337.279,310.54z"></path> 
+                        <path d="M220.707,115.895c-61.801,0-112.079,50.278-112.079,112.079s50.278,112.079,112.079,112.079 s112.079-50.278,112.079-112.079S282.508,115.895,220.707,115.895z M128.866,237.827h31.108 c1.144,25.119,6.64,48.561,15.779,66.839c0.964,1.927,1.963,3.776,2.99,5.557C151.629,296.333,132.235,269.447,128.866,237.827z M175.752,151.283c-9.139,18.278-14.634,41.719-15.779,66.839h-31.108c3.369-31.621,22.763-58.505,49.877-72.396 C177.716,147.506,176.716,149.355,175.752,151.283z M210.854,237.827v79.421c-15.113-9.315-29.17-39.055-31.164-79.421 L210.854,237.827L210.854,237.827z M210.854,218.12H179.69c1.994-40.365,16.051-70.105,31.164-79.421V218.12z M230.56,317.248 v-79.421h31.164C259.73,278.193,245.674,307.934,230.56,317.248z M230.56,218.121V138.7c15.113,9.315,29.17,39.055,31.164,79.421 H230.56z M262.672,310.222c1.027-1.781,2.027-3.63,2.99-5.557c9.139-18.278,14.634-41.719,15.779-66.839h31.107 C309.18,269.447,289.785,296.333,262.672,310.222z M281.441,218.121c-1.144-25.119-6.64-48.561-15.779-66.839 c-0.964-1.927-1.963-3.776-2.99-5.557c27.113,13.89,46.508,40.775,49.876,72.396H281.441z"></path>
+                        <path d="M507.937,489.163L369.741,388.759c10.882-9.96,20.809-21.056,29.586-33.137c8.78-12.085,16.266-24.958,22.374-38.379 l74.653,54.24c1.749,1.271,3.775,1.883,5.784,1.883c3.047,0,6.051-1.41,7.98-4.063c3.199-4.402,2.223-10.564-2.18-13.762 l-78.675-57.16c31.898-91.469,0.158-193.803-78.781-251.154C302.775,12.563,244.421-1.447,186.17,7.781 c-58.25,9.225-109.42,40.581-144.082,88.29c-71.558,98.492-49.646,236.837,48.846,308.396 c38.777,28.171,84.344,42.16,129.831,42.158c47.115-0.004,94.134-15.03,133.374-44.846l142.217,103.327 c1.749,1.271,3.775,1.883,5.784,1.883c3.047,0,6.051-1.41,7.98-4.063C513.316,498.524,512.34,492.362,507.937,489.163z M347.683,381.799c-36.795,30.009-81.804,45.125-126.923,45.122c-41.42-0.001-82.934-12.744-118.246-38.398 C12.815,323.351-7.141,197.353,58.03,107.653c39.3-54.092,100.701-82.815,162.942-82.815c40.973,0,82.319,12.459,117.928,38.33 c73.774,53.602,102.3,150.338,69.36,235.263c-6.206,16.086-14.575,31.431-24.875,45.608 C373.087,358.212,361.08,370.912,347.683,381.799z"></path>
+                      </g> 
+                    </g> 
+                  </g> 
+                </g>
+              </svg>
+            </a>
+          </li>
+          <li class="md:mr-12 text-white hidden sm:flex">
+            <a href="./page/login.html" class="text-white hover:text-gray-300">
+              <svg viewBox="0 0 24 24" class="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier"> 
+                  <path opacity="0.5" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" fill="#32da2f"></path> 
+                  <path d="M16.807 19.0112C15.4398 19.9504 13.7841 20.5 12 20.5C10.2159 20.5 8.56023 19.9503 7.193 19.0111C6.58915 18.5963 6.33109 17.8062 6.68219 17.1632C7.41001 15.8302 8.90973 15 12 15C15.0903 15 16.59 15.8303 17.3178 17.1632C17.6689 17.8062 17.4108 18.5964 16.807 19.0112Z" fill="#32da2f"></path> 
+                  <path d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3432 6 9.00004 7.34315 9.00004 9C9.00004 10.6569 10.3432 12 12 12Z" fill="#32da2f"></path> 
+                </g>
+              </svg>
+            </a>
+        </li>
+          <!-- Icône de Connexion -->
+         
+        </ul>
+      </nav>
+    
+    </header>
+    <main class="pt-20" >
+      <div class="relative mx-auto px-4  pt-2 sm:max-w-full md:max-w-full md:px-8 lg:py-16 xl:px-20 bg-[url('./assets/images/people2.jpg')] bg-cover bg-center">
+        <div class="absolute inset-0 bg-black opacity-50"></div> <!-- Overlay for darkening the background image -->
+        <div class="relative mx-auto max-w-xl lg:max-w-screen-xl">
+            <div class="mb-16 text-center lg:mb-0 lg:max-w-lg lg:text-left">
+                <div class="mb-6 max-w-xl">
+                    <div>
+                        <p class="bg-teal-accent-400 mb-4 inline-block rounded-full bg-orange-400 px-3 py-px text-sm font-semibold tracking-wider text-green-900">Ivoire Tro</p>
+                    </div>
+                    <h2 class="mb-6 max-w-lg font-sans text-3xl font-bold tracking-tight text-white sm:text-5xl sm:leading-snug">
+                        Plus besoin de vous déplacer <br />
+                        Avec
+                        <span class="inline-block text-green-500">Tro</span>
+                    </h2>
+                    <p class="text-base text-white md:text-lg">Faites votre provision du mois en toute sécurité et bénéficiez des produits venant tout droit du champ.</p>
+                </div>
+                <div class="flex flex-col items-center justify-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2 lg:justify-start">
+                    <a href="/" class="inline-flex h-12 w-full items-center justify-center rounded-full bg-green-500 px-6 font-medium tracking-wide text-white shadow-md outline-none transition duration-200 hover:bg-green-400 focus:ring sm:w-auto">Start a free Trial</a>
+                    <a href="/" class="inline-flex h-12 w-full items-center justify-center rounded-full border-2 border-green-500 px-4 font-semibold text-green-600 transition-colors duration-200 hover:border-green-400 hover:text-green-400 sm:w-auto">Watch a demo video</a>
+                </div>
+
+                <div class="mt-6 flex justify-center -space-x-4 lg:justify-start">
+                    <img class="h-12 w-12 rounded-full ring ring-white" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
+                    <img class="h-12 w-12 rounded-full ring ring-white" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
+                    <img class="h-12 w-12 rounded-full ring ring-white" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80" />
+                    <div class="">
+                        <span class="pl-8 text-white font-semibold">Notes clients</span>
+                        <div class="flex w-auto items-center justify-center space-x-1 pl-8">
+                            <svg class="h-auto w-5 fill-current text-yellow-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                            </svg>
+                            <span class="text-sm font-medium text-slate-400">4.9 • <a href="#" class="text-sm font-normal underline">129 reviews</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden h-full justify-center overflow-hidden lg:absolute lg:bottom-0 lg:right-0 lg:flex lg:w-1/2 lg:items-end lg:justify-start">
+                <svg class="h-full w-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="img1" x="0" y="0" width="1" height="1">
+                            <image x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMaxYMax slice" href="/assets/images/pim2.jpeg" />
+                        </pattern>
+                    </defs>
+
+                    <path fill="url(#img1)" d="M40,-62.6C52.2,-54.5,62.5,-43.9,66.9,-31.4C71.3,-18.9,69.6,-4.6,65.9,8.3C62.2,21.1,56.4,32.5,49.2,45.2C42.1,57.9,33.6,71.9,21.8,78.6C10.1,85.2,-5.1,84.5,-18.4,78.8C-31.7,73.2,-43.1,62.6,-54.5,50.3C-66,38.1,-77.5,24.2,-80.1,9.6C-82.8,-5.1,-76.6,-20.3,-67.6,-32.4C-58.5,-44.6,-46.5,-53.8,-33.2,-61.4C-19.9,-69.1,-9.9,-75.1,2.2,-78.1C14.3,-81,28.6,-81,40,-62.6Z" transform="translate(100 100)" />
+                </svg>
+            </div>
+        </div>
+        
+      </div>
+      <!-- all product  -->
+      <section class="bg-white py-12 text-gray-700 sm:py-16 lg:py-20">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-md text-center">
+            <h2 class="font-serif text-2xl font-bold sm:text-3xl">Fruits et légumes frais</h2>
+          </div>
+
+          <div id="contentProductIndex" class="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-4 lg:mt-16">
+            
+          </div>
+        </div>
+        <div class="flex justify-end mt-2">
+            <button class="flex items-center p-2 rounded bg-green-500 hover:bg-green-600 text-white border-blue-700 mx-1">
+              <div class="mx-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+              </svg>
+              </div>
+              <span class="mx-2">Voir plus</span>
+            </button>
+        </div>
+      </section>
+      <!-- info commande  -->
+      <section class="bg-green-500 py-10 leading-6 text-blue-900 sm:py-16 lg:py-24">
+        <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div class="relative max-w-xl">
+            <span class="absolute -top-4 h-2 w-14 bg-white"></span>
+            <h2 class="text-xl font-medium leading-9 text-white sm:text-3xl sm:leading-tight">Les étapes de commande et de livraison</h2>
+            <!-- <p class="text-white ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae enim cupiditate necessitatibus tempore molestias?</p> -->
+          </div>
+      
+          <div class="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 lg:mt-24 lg:grid-cols-4">
+            <div class="relative rounded-xl border-t-4 border-blue-200 bg-white shadow">
+              <div class="flex flex-col items-center py-10">
+                <div class="-mt-20 flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 text-white">
+                  <!-- <span class="absolute -top-4 h-2 w-full bg-orange-200"></span> -->
+      
+                  <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                  </svg>
+                </div>
+                <span class="mt-3 font-medium capitalize">Commander votre produit</span>
+                <p class="mt-3 text-center">votre premier commande, un compte utilisateur est crée qui vous permet de suivre vos commande et avoir tout les details.</p>
+              </div>
+            </div>
+      
+            <div class="relative rounded-xl border-t-4 border-orange-200 bg-white shadow">
+              <div class="flex flex-col items-center py-10">
+                <div class="-mt-20 flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 text-white">
+                  <!-- <span class="absolute -top-4 h-2 w-full bg-orange-200"></span> -->
+                  <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                  </svg>
+                </div>
+                <span class="mt-3 font-medium capitalize">Suivi de commande</span>
+                <p class="mt-3 text-center">Une fois votre commande passée, vous allez recevoir un mail contenant vos identifiant pour vous connecter.Une fois votre produit requisitionné par le livrais, vous seriez notifier et appeler par le livraison pour la confirmation tout en moins de 72h</p>
+              </div>
+            </div>
+      
+            <div class="relative rounded-xl border-t-4 border-orange-200 bg-white shadow">
+              <div class="flex flex-col items-center py-10">
+                <div class="-mt-20 flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 text-white">
+                  <!-- <span class="absolute -top-4 h-2 w-full bg-orange-200"></span> -->
+                  <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
+                  </svg>
+                </div>
+                <span class="mt-3 font-medium  text-center capitalize">Livraison dans toute la Côte D'Ivoire</span>
+                <p class="mt-3 text-center">Vous êtes livrée dans tous les localité de la côte d'ivoire.</p>
+              </div>
+            </div>
+            <div class="relative rounded-xl border-t-4 border-orange-200 bg-white shadow">
+              <div class="flex flex-col items-center py-10">
+                <div class="-mt-20 flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 text-white">
+                  <!-- <span class="absolute -top-4 h-2 w-full bg-orange-200"></span> -->
+                  <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+                  </svg>
+                </div>
+                <span class="mt-3 font-medium capitalize">Delais 24H</span>
+                <p class="mt-3 text-center">Nous tachons de respecter ce délai de livraison. l'une de raison pour laquelle nous somme en partenariat avec les meilleurs entreprise de la place.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> 
+      <!-- testimonal  -->
+      <section class="relative mx-auto flex max-w-screen-xl items-center bg-white py-12 text-gray-900 sm:py-16 lg:py-24">
+        <div class="absolute left-0 h-full w-full bg-gray-100 lg:w-1/2"></div>
+        <div class="relative mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 items-center gap-10 sm:gap-16 lg:grid-cols-2">
+            <div class="mx-auto max-w-sm bg-white xl:max-w-md">
+              <div class="relative rounded-lg border-b-4 border-orange-500 bg-white p-6 shadow-md sm:px-10 sm:py-12">
+                <svg class="absolute -top-10 -left-10 text-9xl text-orange-500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M6.5 10c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.318.142-.686.238-1.028.466c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.945c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.317.143-.686.238-1.028.467c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.944c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 17.5 10z" /></svg>
+                <blockquote class="mt-10">
+                  <p class="leading-relaxed text-gray-600">Il est difficile d’échouer mais il est encore plus difficile de ne pas avoir essayé de réussir.</p>
+                </blockquote>
+      
+                <div class="mt-8 flex items-center justify-between">
+                  <div class="flex items-center">
+                    <img class="block h-10 w-10 max-w-full flex-shrink-0 rounded-full object-cover align-middle" src="/images/R-Wx_NHvZBci3KLrgXhp1.png" alt="" />
+                    <div class="ml-3">
+                      <p class="text-lg font-bold text-gray-600">Abraham konan</p>
+                      <p class="mt-px text-xs text-gray-600">CEO, CIG</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="mx-auto max-w-md text-center lg:max-w-none lg:text-left">
+              <h3 class="-ml-1 inline rounded-full bg-green-400 px-4 py-2 text-sm font-medium uppercase text-white">Parlez à un service client</h3>
+              <h2 class="mt-4 text-3xl font-bold sm:text-4xl xl:mt-2 xl:text-5xl">Abonnez vous pour ne rien manquer</h2>
+              <p class="mt-4 lg:mt-8">Pour ne rien rater de toute les informations et arrivage des produits frais.</p>
+      
+              <form action="#" method="POST" class="mt-14">
+                <label for="email" class="ml-4 cursor-default text-lg font-bold"> Entrer votre adresse E-mail pour recevoir notre newsletters </label>
+                <div class="relative mt-5 max-w-lg">
+                  <div class="absolute">
+                    <div class="mx-auto h-full w-full"></div>
+                  </div>
+      
+                  <div class="relative">
+                    <input type="email" name="email" id="email" placeholder="Entrer votre adresse e-mail" class="block w-full rounded-full border px-5 py-5 text-base shadow-lg outline-none lg:bg-gray-100 focus:border-white focus:shadow-md focus:ring" />
+      
+                    <div class="mt-4 sm:absolute sm:inset-y-0 sm:right-0 sm:mt-0 sm:flex sm:items-center sm:pr-3">
+                      <button type="submit" class="inline-flex w-full cursor-pointer items-center justify-center rounded-full bg-orange-500 bg-none px-8 py-4 text-base font-bold text-white shadow-md outline-none transition-all duration-200 ease-in-out sm:w-auto sm:py-3 focus:shadow-md focus:ring">S'abonner</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div id="contact" class="font-sans text-base text-gray-900 sm:px-10">
+          <div class="text-base text-gray-900">
+            <div class="mx-auto w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl">
+              <div class="mx-2 pt-12 text-center md:mx-auto md:w-2/3 md:pb-12">
+                <h1 class="mb-4 text-3xl font-black sm:text-5xl xl:text-6xl">Contactez nous</h1>
+                <div class="text-lg sm:text-xl xl:text-xl">
+                  <div class="text-gray-900">
+                    <p class="mb-4">Joindre l'équpe du service client de ivoire Tro pour vos préoccupation.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mx-auto mb-20 flex w-full max-w-screen-lg flex-col overflow-hidden rounded-xl text-gray-900 md:flex-row md:border md:shadow-lg">
+                <form class="mx-auto w-full max-w-xl border-gray-200 px-10 py-8 md:px-8">
+                  <div class="mb-4"><label class="text mb-2 block font-medium" for="email">Votre e-mail:</label><input class="w-full rounded border border-gray-300 px-3 py-2 outline-none ring-blue-500 focus:ring" id="email" type="email" required="" /></div>
+                  <div class="mb-4"><label class="text mb-2 block font-medium" for="subject">Sujectio ou préoccupation:</label><input class="w-full rounded border border-gray-300 px-3 py-2 outline-none ring-blue-500 focus:ring" id="subject" type="subject" required="" /></div>
+                  <div class="mb-4"><label class="text mb-2 block font-medium" for="message">Message:</label><textarea class="h-52 w-full rounded border border-gray-300 px-3 py-2 outline-none ring-blue-500 focus:ring" id="message" required=""></textarea></div>
+                  <div class="flex items-center">
+                    <div class="flex-1"></div>
+                    <button class="rounded-xl bg-orange-600 px-4 py-3 text-center font-bold text-white hover:bg-orange-700" type="submit">Envoyer le message</button>
+                  </div>
+                </form>
+                <div class="mt-10 bg-green-600 px-10 py-8 text-gray-100 md:mt-0 md:ml-auto">
+                  <div class="">
+                    <p class="mb-4 font-medium border-b  pb-2">24h/24</p>
+                    <p class="mb-4">Côte d'Ivoire, Abidjan</p>
+                    <p class="mb-4">
+                      Email:
+                      <a href="#" class="font-semibold underline">konanytic2020@gmail.com</a>
+                    </p>
+                    <p class="mb-4">
+                      Phone:
+                      <a href="#" class="font-semibold underline">+225 0141822918</a>
+                    </p>
+                    <hr class="my-2 h-0 border-t border-r-0 border-b-0 border-l-0 border-gray-300" />
+                    <p class="mb-4">Siège: Cocody - Angré</p>
+                    <p class="mb-4"></p>
+                  </div>
+                </div>
+          </div>
+      </div>
+    </main>
+    <footer class="relative mt-20 bg-gray-900 px-4 pt-20">
+      <div class="absolute -top-10 left-1/2 h-16 w-16 -translate-x-1/2 rounded-xl border-4 border-sky-500 bg-white p-2"><img class="h-full object-contain" src="/images/logo-circle.png" alt="" /></div>
+      <nav aria-label="Footer Navigation" class="mx-auto mb-10 flex max-w-lg flex-col gap-10 text-center sm:flex-row sm:text-left">
+        <a href="#" class="font-medium text-white">Demo</a>
+        <a href="#" class="font-medium text-white">Support</a>
+        <a href="#" class="font-medium text-white">Privacy Policy</a>
+        <a href="#" class="font-medium text-white">Terms & Conditions</a>
+      </nav>
+      <p class="py-10 text-center text-gray-300">© 2024 konanyCode | All Rights Reserved</p>
+    </footer>
+    <script src="./assets/js/index.js"></script>
+</body>
+</html>
